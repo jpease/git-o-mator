@@ -1,0 +1,38 @@
+#! /bin/sh
+
+## Simple script to automate creation of Git repository on a private remote
+## host such as a VPS account.
+
+## Configuration
+# Remote user you will connect as.
+REMOTE_USER="admin"
+# The IP address you will SSH / SCP to.
+REMOTE_HOST="209.123.162.65"
+# The remote path you wish to store your .git repositories in.
+REMOTE_REPO_PATH="/home/admin/repos/"
+
+## For basic usage you should not need to edit anything below this line #######
+
+PWD=`pwd`
+
+if [ -d $1 ]; then
+  echo "EXITING: Local directory '$1' already exists, no changes made."
+  exit 0
+else
+  mkdir $1
+  cd $1
+  git init
+  touch README
+  git add README
+  git commit -m "Initial repository creation"
+  cd ..
+  git clone --bare $1/.git $1.git
+  echo "** Copying new repository $1.git to $REMOTE_HOST:$REMOTE_REPO_PATH" 
+  scp -r $1.git $REMOTE_USER@$REMOTE_HOST:$REMOTE_REPO_PATH
+  rm -rf $1.git
+  rm -rf $1
+  echo "** Cloning locally at $PWD/$1"
+  git clone $REMOTE_USER@$REMOTE_HOST:$REMOTE_REPO_PATH$1.git
+fi
+
+exit 0
