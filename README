@@ -6,9 +6,9 @@
 
   ## Configuration
 
-  You will need to replace REMOTE_USER="admin" with an actual user on your 
-  hosting account, adjust REMOTE_HOST="123.456.123.456" to point to your 
-  accounts IP address, and edit REMOTE_REPO_PATH="/home/admin/repos/" with 
+  You will need to replace REMOTE_USER="user" with an actual user on your 
+  hosting account, adjust REMOTE_HOST="123.123.123.123" to point to your 
+  accounts IP address, and edit REMOTE_REPO_PATH="/path/to/repos/" with 
   whatever path you wish to contain your Git repositories on your remote host.
 
   Once that is done, provide the script with executable permissions.
