@@ -1,1 +1,26 @@
-Simple scripts to help automate Git based work flow.
+## Git-O-Mator
+
+  Simple scripts to help automate a Git based work flow.
+
+## New_repo script ############################################################
+
+  ## Configuration
+
+  You will need to replace REMOTE_USER="admin" with an actual user on your 
+  hosting account, adjust REMOTE_HOST="123.456.123.456" to point to your 
+  accounts IP address, and edit REMOTE_REPO_PATH="/home/admin/repos/" with 
+  whatever path you wish to contain your Git repositories on your remote host.
+
+  Once that is done, provide the script with executable permissions.
+
+  $ chmod +x new_repo
+
+  Optionally add the location to your PATH.  That's it. 
+
+  ## Usage
+
+  $ ./new_repo testing
+
+  You will end up with /home/user/repos/testing.git on your remote host, 
+  and ./testing locally. From ./testing you can git push to send commits to 
+  the remote repository, and git pull to retrieve from the remote repository.
