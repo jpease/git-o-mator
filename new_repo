@@ -7,7 +7,7 @@
 # Remote user you will connect as.
 REMOTE_USER="admin"
 # The IP address you will SSH / SCP to.
-REMOTE_HOST="209.123.162.65"
+REMOTE_HOST="123.123.123.123"
 # The remote path you wish to store your .git repositories in.
 REMOTE_REPO_PATH="/home/admin/repos/"
 
