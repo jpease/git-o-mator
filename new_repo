@@ -1,14 +1,15 @@
 #! /bin/sh
 
-## Simple script to automate creation of Git repository on a private remote
+## new_repo
+## A simple script to automate creation of Git repository on a private remote
 ## host such as a VPS account.
 
 ## Configuration
-# Remote user you will connect as.
+#  Remote user you will connect as.
 REMOTE_USER="user"
-# The IP address you will SSH / SCP to.
+#  The IP address you will SSH / SCP to.
 REMOTE_HOST="123.123.123.123"
-# The remote path you wish to store your .git repositories in.
+#  The remote path you wish to store your .git repositories in.
 REMOTE_REPO_PATH="/path/to/repos/"
 
 ## For basic usage you should not need to edit anything below this line #######
