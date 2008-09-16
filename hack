@@ -90,8 +90,8 @@ case $1 in
 	push*)
 		hack_push
 		;;
-	simple*)
-		if [ $2 = "-t" ]; then
+	ssp*)
+		if [ "$2" = "-t" ]; then
 			hack_sync && rake && hack_push
 		else
 		  hack_sync && hack_push
