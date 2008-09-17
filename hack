@@ -10,6 +10,7 @@
 ## Configuration
 #  Set your preferred default branch to hack in
 DEFAULT_BRANCH="development"
+TEST_CMD="rake" # For example merb uses "rake spec" instead of just "rake"
 
 ## For basic usage you should not need to edit anything below this line #######
 usage() {
@@ -27,7 +28,8 @@ usage() {
 	echo " "
 	echo "hack ssp (simple software process)"
 	echo "hack sync && hack push"
-	echo "Use -t flag (hack ssp -t) to include rake testing"
+	echo "Use -t flag (hack ssp -t) to include testing."
+	echo "Testing is currently set to $TEST_CMD but can be configured as desired"
 	
 	exit 1
 }
@@ -92,7 +94,7 @@ case $1 in
 		;;
 	ssp*)
 		if [ "$2" = "-t" ]; then
-			hack_sync && rake && hack_push
+			hack_sync && $TEST_CMD && hack_push
 		else
 		  hack_sync && hack_push
 		fi
