@@ -12,7 +12,7 @@
   whatever path you wish to contain your Git repositories on your remote host.
 
   You can also create a file $HOME/.new_repo where you set the three
-  variables REPO_USER, REPO_HOST, REMOTE_REPO_PATH.
+  variables REMOTE_USER, REMOTE_HOST, REMOTE_REPO_PATH.
 
   ## Usage
 
