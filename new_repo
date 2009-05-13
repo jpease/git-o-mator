@@ -16,8 +16,8 @@ REMOTE_REPO_PATH="/path/to/repos/"
 
 PWD=`pwd`
 
-if [ -d $1 ]; then
-  echo "EXITING: Local directory '$1' already exists, no changes made."
+if [ -d $1/.git ]; then
+  echo "EXITING: Local git repository '$1' already exists, no changes made."
   exit 0
 else
   mkdir $1
