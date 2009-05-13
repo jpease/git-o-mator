@@ -20,11 +20,11 @@ if [ -d $1/.git ]; then
   echo "EXITING: Local git repository '$1' already exists, no changes made."
   exit 0
 else
-  mkdir $1
+  test -d $1 || mkdir $1
   cd $1
   git init
-  touch README
-  git add README
+  test -f .gitignore || cp .git/info/exclude .gitignore
+  git add .
   git commit -m "Initial repository creation"
   cd ..
   git clone --bare $1/.git $1.git
