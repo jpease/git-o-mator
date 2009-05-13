@@ -11,11 +11,8 @@
   accounts IP address, and edit REMOTE_REPO_PATH="/path/to/repos/" with 
   whatever path you wish to contain your Git repositories on your remote host.
 
-  Once that is done, provide the script with executable permissions.
-
-  $ chmod +x new_repo
-
-  Optionally add the location to your PATH.  That's it. 
+  You can also create a file $HOME/.new_repo where you set the three
+  variables REPO_USER, REPO_HOST, REMOTE_REPO_PATH.
 
   ## Usage
 
