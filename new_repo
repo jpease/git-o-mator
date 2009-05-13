@@ -12,6 +12,8 @@ REMOTE_HOST="123.123.123.123"
 #  The remote path you wish to store your .git repositories in.
 REMOTE_REPO_PATH="/path/to/repos/"
 
+test -f ${HOME}/.new_repo && . ${HOME}/.new_repo
+
 ## For basic usage you should not need to edit anything below this line #######
 
 PWD=`pwd`
